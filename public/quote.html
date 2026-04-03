@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AUTO INSURANCE | Get a Quote</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "background": "#000000",
+                    "surface": "#000000",
+                    "surface-container": "#0a0a0a",
+                    "surface-container-high": "#141414",
+                    "surface-container-highest": "#1a1a1a",
+                    "primary": "#f59e0b",
+                    "on-primary": "#000000",
+                    "secondary": "#3b82f6",
+                    "on-surface": "#ffffff",
+                    "on-surface-variant": "#a3a3a3",
+                    "outline": "#262626",
+                    "outline-variant": "#333333",
+                },
+                fontFamily: {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+                },
+                borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+            },
+        },
+    }
+</script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { min-height: max(884px, 100dvh); background: #000; color: #fff; font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+
+<!-- Header -->
+<header class="bg-black/95 fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 border-b border-neutral-900">
+    <a href="/" class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-amber-500 text-2xl">directions_car</span>
+        <span class="text-2xl font-black text-amber-500 font-['Space_Grotesk'] uppercase tracking-tighter">AUTO INSURANCE</span>
+    </a>
+    <a href="/quote.html" class="bg-amber-500 text-black px-6 py-2 font-['Space_Grotesk'] font-bold uppercase tracking-widest">GET QUOTE</a>
+</header>
+
+<main class="pt-28 pb-20">
+    <!-- Hero -->
+    <section class="max-w-5xl mx-auto px-6 mb-12">
+        <h1 class="font-['Space_Grotesk'] text-5xl md:text-7xl font-bold uppercase tracking-tighter text-white leading-none mb-4">
+            YOUR VEHICLE.<br/><span class="text-amber-500">YOUR COVERAGE.</span>
+        </h1>
+        <p class="text-neutral-400 text-lg max-w-xl">Fast quotes. All vehicle types. All drivers welcome. No phone trees, no runaround.</p>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="max-w-4xl mx-auto px-6">
+        <form name="auto-quote-request" data-netlify="true" class="space-y-8">
+            <input type="hidden" name="form-name" value="auto-quote-request"/>
+
+            <!-- Section: Coverage Type -->
+            <div class="bg-neutral-900 border border-neutral-800 p-8 space-y-6">
+                <div class="border-b border-neutral-700 pb-4">
+                    <h2 class="font-['Space_Grotesk'] text-2xl font-bold text-white uppercase">Coverage Type</h2>
+                    <p class="text-neutral-500 text-sm mt-1">Tell us what kind of coverage you need</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label class="bg-neutral-800 p-6 cursor-pointer border-2 border-transparent hover:border-amber-500 transition-all">
+                        <input type="radio" name="coverage_type" value="Personal Auto" class="sr-only" checked/>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-amber-500 text-3xl">directions_car</span>
+                            <div>
+                                <h3 class="font-['Space_Grotesk'] font-bold text-white uppercase text-sm">Personal Auto</h3>
+                                <p class="text-neutral-500 text-xs mt-1">Personal use vehicles only</p>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="bg-neutral-800 p-6 cursor-pointer border-2 border-transparent hover:border-amber-500 transition-all">
+                        <input type="radio" name="coverage_type" value="Commercial Auto" class="sr-only"/>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-amber-500 text-3xl">local_shipping</span>
+                            <div>
+                                <h3 class="font-['Space_Grotesk'] font-bold text-white uppercase text-sm">Commercial Auto</h3>
+                                <p class="text-neutral-500 text-xs mt-1">Business vehicles and fleets</p>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="bg-neutral-800 p-6 cursor-pointer border-2 border-transparent hover:border-amber-500 transition-all">
+                        <input type="radio" name="coverage_type" value="Liability Only" class="sr-only"/>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-amber-500 text-3xl">shield</span>
+                            <div>
+                                <h3 class="font-['Space_Grotesk'] font-bold text-white uppercase text-sm">Liability Only</h3>
+                                <p class="text-neutral-500 text-xs mt-1">State minimum coverage</p>
+                            </div>
+                        </div>
+                    </label>
+                    <label class="bg-neutral-800 p-6 cursor-pointer border-2 border-transparent hover:border-amber-500 transition-all">
+                        <input type="radio" name="coverage_type" value="Full Coverage" class="sr-only"/>
+                        <div class="flex items-center gap-4">
+                            <span class="material-symbols-outlined text-amber-500 text-3xl">verified_user</span>
+                            <div>
+                                <h3 class="font-['Space_Grotesk'] font-bold text-white uppercase text-sm">Full Coverage</h3>
+                                <p class="text-neutral-500 text-xs mt-1">Comprehensive + collision</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Section: Vehicle Info -->
+            <div class="bg-neutral-900 border border-neutral-800 p-8 space-y-6">
+                <div class="border-b border-neutral-700 pb-4">
+                    <h2 class="font-['Space_Grotesk'] text-2xl font-bold text-white uppercase">Vehicle Information</h2>
+                    <p class="text-neutral-500 text-sm mt-1">VIN and vehicle details</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-amber-500 uppercase">Vehicle Identification Number (VIN)</label>
+                        <input name="vin" placeholder="1C3-CDZ-BT..." required class="w-full bg-neutral-800 border-2 border-neutral-700 focus:border-amber-500 outline-none py-3 px-4 text-lg font-['Space_Grotesk'] tracking-widest uppercase placeholder:text-neutral-600 transition-colors"/>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-amber-500 uppercase">Year / Make / Model</label>
+                        <input name="vehicle_details" placeholder="2019 Ford F-150..." required class="w-full bg-neutral-800 border-2 border-neutral-700 focus:border-amber-500 outline-none py-3 px-4 text-lg font-['Space_Grotesk'] tracking-wide placeholder:text-neutral-600 transition-colors"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section: Required Documents -->
+            <div class="bg-neutral-900 border border-neutral-800 p-8 space-y-6">
+                <div class="border-b border-neutral-700 pb-4">
+                    <h2 class="font-['Space_Grotesk'] text-2xl font-bold text-white uppercase">Required Documents</h2>
+                    <p class="text-neutral-500 text-sm mt-1">Upload the following to complete your quote</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-amber-500 uppercase">Driver's License — All Drivers</label>
+                        <div class="relative">
+                            <input name="drivers_license" type="file" accept="image/*,.pdf" class="hidden" id="drivers_license"/>
+                            <label for="drivers_license" class="flex flex-col items-center gap-3 bg-neutral-800 border-2 border-dashed border-neutral-600 hover:border-amber-500 cursor-pointer p-8 transition-colors">
+                                <span class="material-symbols-outlined text-neutral-500 text-3xl">badge</span>
+                                <div class="text-center">
+                                    <p class="font-['Space_Grotesk'] text-sm text-white">Upload Driver's License</p>
+                                    <p class="text-xs text-neutral-500 mt-1">Image or PDF — all listed drivers</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-amber-500 uppercase">Current Insurance Card</label>
+                        <div class="relative">
+                            <input name="insurance_card" type="file" accept="image/*,.pdf" class="hidden" id="insurance_card"/>
+                            <label for="insurance_card" class="flex flex-col items-center gap-3 bg-neutral-800 border-2 border-dashed border-neutral-600 hover:border-amber-500 cursor-pointer p-8 transition-colors">
+                                <span class="material-symbols-outlined text-neutral-500 text-3xl">verified_user</span>
+                                <div class="text-center">
+                                    <p class="font-['Space_Grotesk'] text-sm text-white">Upload Insurance Card</p>
+                                    <p class="text-xs text-neutral-500 mt-1">Image or PDF</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Drivers Warning -->
+                <div class="bg-amber-900/20 border border-amber-700 p-4 flex items-start gap-3">
+                    <span class="material-symbols-outlined text-amber-500 mt-0.5">warning</span>
+                    <p class="text-sm text-amber-400">All drivers must be listed on the policy or they will <strong>not</strong> be covered. Upload licenses for every driver who will operate the vehicle.</p>
+                </div>
+            </div>
+
+            <!-- Section: Contact Info -->
+            <div class="bg-neutral-900 border border-neutral-800 p-8 space-y-6">
+                <div class="border-b border-neutral-700 pb-4">
+                    <h2 class="font-['Space_Grotesk'] text-2xl font-bold text-white uppercase">Your Info</h2>
+                    <p class="text-neutral-500 text-sm mt-1">How we reach you</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-amber-500 uppercase">Full Name</label>
+                        <input name="name" type="text" required class="w-full bg-neutral-800 border-2 border-neutral-700 focus:border-amber-500 outline-none py-3 px-4 text-base placeholder:text-neutral-600 transition-colors" placeholder="Your full name"/>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-amber-500 uppercase">Phone</label>
+                        <input name="phone" type="tel" required class="w-full bg-neutral-800 border-2 border-neutral-700 focus:border-amber-500 outline-none py-3 px-4 text-base placeholder:text-neutral-600 transition-colors" placeholder="480-555-0100"/>
+                    </div>
+                    <div class="space-y-2 md:col-span-2">
+                        <label class="font-['Space_Grotesk'] text-xs font-bold tracking-widest text-amber-500 uppercase">Email</label>
+                        <input name="email" type="email" required class="w-full bg-neutral-800 border-2 border-neutral-700 focus:border-amber-500 outline-none py-3 px-4 text-base placeholder:text-neutral-600 transition-colors" placeholder="you@example.com"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="flex justify-end">
+                <button type="submit" class="bg-amber-500 text-black px-12 py-4 font-['Space_Grotesk'] font-bold uppercase tracking-widest text-lg hover:bg-amber-400 transition-colors">
+                    Get My Quote
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer class="border-t border-neutral-900 py-8 text-center">
+    <p class="text-neutral-600 text-xs font-['Space_Grotesk'] tracking-widest uppercase">Contractors Choice Agency — Serving All 50 States</p>
+</footer>
+
+</body>
+</html>
