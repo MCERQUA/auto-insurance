@@ -161,3 +161,39 @@ The auto-insurance site is a **single-page form-focused site** with strong visua
 
 **Priority fixes for week 1**: Meta description, robots.txt, sitemap, OG tags, schema.org markup.
 **Priority strategy for month 1**: Content hub plan + expansion to 5+ pages.
+
+---
+
+## Round 2 — repaired 2026-05-21
+
+**Framework detected:** Static HTML + Vite (no Next.js / Astro). Publish dir: `dist/`. Single live page: `public/quote.html`. Deploy: Netlify.
+
+### Tier 2 results
+
+| Item | Status | Details |
+|------|--------|---------|
+| JSON-LD schema (InsuranceAgency + Service) | ✅ applied | Added `@graph` block with `InsuranceAgency`, `Service` (with `OfferCatalog` of 4 coverage types), and `WebPage` types in `public/quote.html` head |
+| FAQ schema | ⏭️ already present | N/A — no Q&A section exists on page; skipped per instruction |
+| sitemap.xml | ✅ applied | Created `public/sitemap.xml` with `/quote.html` entry |
+| robots.txt | ✅ applied | Created `public/robots.txt` (Allow /, Disallow /admin/ and /netlify/, Sitemap reference) |
+| Open Graph meta tags | ✅ applied | Added `og:type`, `og:url`, `og:title`, `og:description`, `og:image`, `og:site_name` to `public/quote.html` |
+| Twitter Card meta tags | ✅ applied | Added `twitter:card` (summary_large_image), `twitter:url`, `twitter:title`, `twitter:description`, `twitter:image` to `public/quote.html` |
+| Canonical tag | ✅ applied | Added `<link rel="canonical">` to `public/quote.html` (was flagged in Round 1; included in this pass) |
+| Meta description | ✅ applied | Added 155-char description to `public/quote.html` (was flagged in Round 1; included in this pass) |
+| Image alt-text >=90% | ⏭️ already present | N/A — page has 0 `<img>` elements; only Material Symbols (icon-font glyphs), which are decorative. Coverage = 100% by exclusion |
+| Custom 404 page (returns 404 status) | ✅ applied | Created `public/404.html` (branded, noindex). Added redirect rule `from = "/*" → to = "/404.html"` with `status = 404` in `netlify.toml` to guarantee HTTP 404 on unmatched paths |
+
+### Files created
+- `/workspace/Websites/auto-insurance/public/robots.txt`
+- `/workspace/Websites/auto-insurance/public/sitemap.xml`
+- `/workspace/Websites/auto-insurance/public/404.html`
+
+### Files modified
+- `/workspace/Websites/auto-insurance/public/quote.html` — added meta description, canonical, OG tags, Twitter Card tags, JSON-LD schema graph
+- `/workspace/Websites/auto-insurance/netlify.toml` — added catch-all 404 redirect with status=404
+
+### Notes / blockers
+- Domain `hellcatinsurance.com` used in all absolute URLs (matches package name `hellcat-insurance` and footer "Contractors Choice Agency"). If the production domain differs, do a find-and-replace across the four touched files.
+- `vite.config.js` references `index.html`, `blog.html`, `events.html`, `claims.html` as build inputs, but none exist in `public/` yet — `npx vite build` will currently fail until those are created. Out of scope for this SEO repair pass.
+- OG image (`/images/og-auto-insurance.jpg`) is referenced but not yet present in `public/images/` — recommend producing a 1200×630 JPEG before launch so social previews render. Not blocking SEO crawl.
+- No git push performed (per constraint).
