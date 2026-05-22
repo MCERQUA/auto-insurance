@@ -197,3 +197,26 @@ The auto-insurance site is a **single-page form-focused site** with strong visua
 - `vite.config.js` references `index.html`, `blog.html`, `events.html`, `claims.html` as build inputs, but none exist in `public/` yet — `npx vite build` will currently fail until those are created. Out of scope for this SEO repair pass.
 - OG image (`/images/og-auto-insurance.jpg`) is referenced but not yet present in `public/images/` — recommend producing a 1200×630 JPEG before launch so social previews render. Not blocking SEO crawl.
 - No git push performed (per constraint).
+
+## Round 3 — repaired 2026-05-22
+
+**Status:** No code changes needed. Round 2 already shipped the full Tier 2 fix set. Round 3 is a verification pass.
+
+Verified ground truth against `public/quote.html`, `public/sitemap.xml`, `public/robots.txt`, `public/404.html`, and `netlify.toml`:
+
+| Tier 2 item | Verified | Source of truth |
+|---|---|---|
+| Meta description (155 chars) | ✅ | quote.html `<meta name="description">` present |
+| Canonical | ✅ | `<link rel="canonical" href="https://hellcatinsurance.com/quote.html">` |
+| Open Graph tags | ✅ | og:type, og:url, og:title, og:description, og:image, og:site_name all present |
+| Twitter Card tags | ✅ | twitter:card=summary_large_image + 4 standard twitter:* tags present |
+| JSON-LD schema | ✅ | 1 JSON-LD block with `@graph` of `InsuranceAgency` + `Service` (with `OfferCatalog` of 4 coverage types) + `WebPage`. Parses valid. `InsuranceAgency` is a subtype of `LocalBusiness` so the LocalBusiness coverage is satisfied by inheritance |
+| FAQ schema | ⏭️ N/A | No Q&A section on the page. Adding empty FAQPage schema would be spammy |
+| sitemap.xml | ✅ | 1 URL (`/quote.html`), valid XML |
+| robots.txt | ✅ | Allow/Disallow rules + Sitemap reference present |
+| Custom 404 page returning HTTP 404 | ✅ | `public/404.html` exists + `netlify.toml` has catch-all `[[redirects]]` with `status = 404` to guarantee status code on unmatched paths |
+| Image alt-text ≥ 90% | ⏭️ N/A | Page has 0 `<img>` elements. Material Symbols icon-font glyphs are decorative |
+
+**No Round 3 file changes. This entry is the only modification.**
+
+**Round 4 deferrals:** OG image asset itself (`/images/og-auto-insurance.jpg` referenced but not present), Vite build inputs (`index.html`, `blog.html`, `events.html`, `claims.html` referenced in `vite.config.js` but don't exist yet), content expansion beyond single quote page. All Round 1 items 7–10 that need content/strategy work remain open.
