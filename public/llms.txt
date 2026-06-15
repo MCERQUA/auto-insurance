@@ -1,0 +1,40 @@
+# AUTO INSURANCE — Hellcat Insurance / Contractors Choice Agency
+# https://hellcatinsurance.com
+# llms.txt v1.0
+
+## Site Name
+Hellcat Insurance (powered by Contractors Choice Agency)
+
+## Description
+Fast online auto insurance quotes for personal vehicles, commercial fleets, contractor work trucks, and specialty vehicles. All 50 states. No phone trees. Quotes in 15 minutes.
+
+## Primary URL
+https://hellcatinsurance.com
+
+## Parent Organization
+Contractors Choice Agency
+12220 E Riggs Road Suite #105, Chandler, AZ 85249
+Phone: 844-967-5247
+Email: josh@contractorschoiceagency.com
+Licensed in all 50 states | NPN: 8608479
+
+## Main Services
+- Personal Auto Insurance
+- Commercial Auto Insurance (business vehicles, fleets, contractor trucks)
+- Liability Only Coverage (state minimum)
+- Full Coverage Auto Insurance (comprehensive + collision)
+- Commercial auto for contractors and trades (roofers, HVAC, spray foam, general contractors)
+
+## Key Pages
+- /quote.html — Get an instant auto insurance quote (main entry point)
+- /404.html — 404 error page
+
+## Target Audience
+Contractors, tradespeople, and everyday drivers seeking fast, honest auto insurance quotes. Specialty focus on commercial vehicles used in contracting and construction trades.
+
+## Coverage
+Nationwide — all 50 United States
+
+## Contact
+Phone: 844-967-5247
+Email: josh@contractorschoiceagency.com

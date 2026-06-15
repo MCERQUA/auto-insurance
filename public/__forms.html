@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Netlify Forms Pre-Registration</title>
+</head>
+<body>
+<!-- Pre-register all Netlify forms so they are detected on static builds -->
+
+<!-- Auto Insurance Quote Request Form -->
+<form name="auto-quote-request" netlify netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="auto-quote-request"/>
+  <input name="bot-field"/>
+  <input name="coverage_type" type="radio" value="Personal Auto"/>
+  <input name="coverage_type" type="radio" value="Commercial Auto"/>
+  <input name="coverage_type" type="radio" value="Liability Only"/>
+  <input name="coverage_type" type="radio" value="Full Coverage"/>
+  <input name="vin" type="text"/>
+  <input name="vehicle_details" type="text"/>
+  <input name="drivers_license" type="file"/>
+  <input name="insurance_card" type="file"/>
+  <input name="name" type="text"/>
+  <input name="phone" type="tel"/>
+  <input name="email" type="email"/>
+</form>
+</body>
+</html>
